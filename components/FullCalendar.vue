@@ -6,6 +6,7 @@
     import defaultsDeep from 'lodash.defaultsdeep'
     import 'fullcalendar'
     import $ from 'jquery'
+    import objectAssign from 'object-assign'
 
     export default {
         props: {
@@ -164,8 +165,8 @@
         },
 
         methods: {
-            fireMethod(...options) {
-                return $(this.$el).fullCalendar(...options)
+            fireMethod(object2 = Object.assign({}, options)) {
+                return $(this.$el).fullCalendar(object2)
             },
         },
 
